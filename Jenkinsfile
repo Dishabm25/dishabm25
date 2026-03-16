@@ -8,9 +8,9 @@ pipeline {
           branch: 'main'
       }
     }
-    stage('Run Script') {
+    stage('Run Python Script') {
       steps {
-        sh 'python3 script.py'
+         sh 'python3 script.py'
       }
     }
   }
