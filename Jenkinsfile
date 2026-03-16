@@ -8,9 +8,17 @@ pipeline {
           branch: 'main'
       }
     }
-    stage('Run Python Script') {
+    stage('Run Python Code') {
       steps {
-         sh 'python3 script.py'
+         sh 'python3 -c "print(\'Hello from Jenkins!\')"'
+      
+         sh '''
+           python3 -c "
+print('Line 1')
+print('Line 2')
+print('This is Python code running without a file')
+           "
+         '''
       }
     }
   }
